@@ -10,7 +10,6 @@
 #include "includes/homerow_mods.dtsi"
 #include "includes/settings.dtsi"
 #include "includes/combos.dtsi"
-#include "includes/tapdance.dtsi"
 
 / {
     macros {
