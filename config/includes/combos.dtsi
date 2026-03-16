@@ -1,0 +1,220 @@
+#include <dt-bindings/zmk/mouse.h>
+// should include keyposition helpers
+
+#define COMBO_TERM_FAST 60
+#define COMBO_TERM_SLOW 100
+#define COMBO_REQUIRE_PRIOR_IDLE 200
+#define COMBO_REQUIRE_PRIOR_IDLE_SHORT 70
+
+/ {
+  combos {
+    compatible = "zmk,combos";
+
+    combo_bracket_v_round_l {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LT1 LM1>;
+      layers = <BASE WBASE NUM NAV>;
+      bindings = <&kp LPAR>;
+    };
+
+    combo_bracket_v_round_r {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <RT1 RM1>;
+      layers = <BASE WBASE NUM NAV>;
+      bindings = <&kp RPAR>;
+    };
+
+    combo_bracket_v_square_l {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LT2 LM2>;
+      layers = <BASE WBASE NUM NAV>;
+      bindings = <&kp LBKT>;
+    };
+
+    combo_bracket_v_square_r {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <RT2 RM2>;
+      layers = <BASE WBASE NUM NAV>;
+      bindings = <&kp RBKT>;
+    };
+
+    combo_bracket_v_curly_l {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LT3 LM3>;
+      layers = <BASE WBASE NUM NAV>;
+      bindings = <&kp LBRC>;
+    };
+
+    combo_bracket_v_curly_r {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <RT3 RM3>;
+      layers = <BASE WBASE NUM NAV>;
+      bindings = <&kp RBRC>;
+    };
+
+    combo_bracket_v_angled_l {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LT0 LM0>;
+      layers = <BASE WBASE NUM NAV>;
+      bindings = <&kp LT>;
+    };
+
+    combo_bracket_v_angled_r {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <RT0 RM0>;
+      layers = <BASE WBASE NUM NAV>;
+      bindings = <&kp GT>;
+    };
+
+    combo_semicolon {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <RB3 RB4>;
+      layers = <BASE WBASE NUM NAV>;
+      bindings = <&kp SEMICOLON>;
+    };
+    combo_colon {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_SHORT>;
+      key-positions = <RM3 RM4>;
+      layers = <BASE WBASE NUM NAV>;
+      bindings = <&kp COLON>;
+    };
+
+    combo_copy {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LM2 LB2>;
+      layers = <BASE>;
+      bindings = <&kp LG(C)>;
+    };
+    combo_cut {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LM3 LB3>;
+      layers = <BASE>;
+      bindings = <&kp LG(X)>;
+    };
+    combo_paste {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LM1 LB1>;
+      layers = <BASE>;
+      bindings = <&kp LG(V)>;
+    };
+    combo_bold {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LM0 LB0>;
+      layers = <BASE>;
+      bindings = <&kp LG(B)>;
+    };
+    combo_copy_win {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LM2 LB2>;
+      layers = <WBASE>;
+      bindings = <&kp LC(C)>;
+    };
+    combo_cut_win {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LM3 LB3>;
+      layers = <WBASE>;
+      bindings = <&kp LC(X)>;
+    };
+    combo_paste_win {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LM1 LB1>;
+      layers = <WBASE>;
+      bindings = <&kp LC(V)>;
+    };
+    combo_bold_win {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LM0 LB0>;
+      layers = <WBASE>;
+      bindings = <&kp LC(B)>;
+    };
+    combo_esc {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LT2 LT3>;
+      layers = <BASE WBASE NUM NAV>;
+      bindings = <&kp ESC>;
+    };
+
+    combo_capslock {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LM1 LM2 RM1 RM2>;
+      layers = <BASE WBASE>;
+      bindings = <&kp CAPSLOCK>;
+    };
+
+    combo_tog_num_word {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LT3 LT2 LT1>;
+      layers = <BASE WBASE NUM NAV>;
+      bindings = <&num_word NUM>;
+    };
+
+    combo_screenshot {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LT4 LT3 LT2 LT1>;
+      layers = <BASE>;
+      bindings = <&kp SCREENS>;
+    };
+
+    combo_dplacer {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LB4 LB3 LB2 LB1>;
+      layers = <BASE>;
+      bindings = <&kp DPLACER>;
+    };
+
+    combo_mouse_left {
+      timeout-ms = <COMBO_TERM_FAST>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LB1 LB2>;
+      layers = <BASE WBASE>;
+      bindings = <&mkp MB1>;
+    };
+
+    combo_mouse_right {
+      timeout-ms = <COMBO_TERM_FAST>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <LB0 LB1>;
+      layers = <BASE WBASE>;
+      bindings = <&mkp MB2>;
+    };
+
+    combo_back {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <RB1 RB2>;
+      layers = <BASE WBASE>;
+      bindings = <&kp LA(LS(LG(O)))>;
+    };
+
+    combo_forward {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
+      key-positions = <RB2 RB3>;
+      layers = <BASE WBASE>;
+      bindings = <&kp LA(LS(LG(P)))>;
+    };
+  };
+};

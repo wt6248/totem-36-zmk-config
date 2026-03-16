@@ -1,0 +1,62 @@
+#define HM_TAPPING_TERM 250
+#define HM_TAPPING_TERM_FAST 210
+
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4 // left-hand keys
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 // right-hand keys
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                       // thumb keys
+
+/ {
+
+    behaviors {
+        hml: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            flavor = "tap-preferred"; // tap-preferred인 이유: balanced는 옷, 만 같은것을 속타할때 모드키가 발동되는 문제 있음.
+            require-prior-idle-ms = <200>; // 처음부터 속타를 치는경우가 많아 require-prior-idle-ms는 balanced유지에 도움이 안됨
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+        hmr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+        hmsl: hm_shift_l {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+            // 천천히 누를 때 쉬프트로 인식되서 키 씹히는것때문에 HM_TAPPING_TERM_FAST을 180에서 210으로 올림
+            // balanced type에서는 딱히 단점은 없을듯
+            quick_tap_ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <175>;
+            // 200정도는 되어야 역량 같은것이 여걍 으로 되지 않음. 185으로는 부족했음.
+            // 단 200정도 되면 '성공적으로 끝'같이 속타로 쉬프트 넣어야할때 답답함.
+            // 적응되니 175도 가능했고 160~170정도를 목표로 하면서 타이핑습관을 개선해야할듯 함.
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+        hmsr: hm_shift_r {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <175>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+
+    };
+};

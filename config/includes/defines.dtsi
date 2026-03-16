@@ -1,0 +1,31 @@
+#define BASE    0
+#define WBASE   1
+#define NUM     2
+#define SPE     3
+#define NAV     4
+
+#define ___ &trans
+#define XXX &none
+#define SPC SPACE
+#define CTL LCTRL
+#define ALT LALT
+#define GUI LGUI
+#define SFT LSHIFT
+#define HOMEROW LG(LS(SPACE))
+#define SCREENS LG(LS(N4))
+#define DPLACER LG(LA(LS(D)))
+#define PREV_T LG(LA(LS(E)))
+#define NEXT_T LG(LA(E))
+
+#define QUICK_TAP_MS 175 // for double tap repeat
+
+#define BT(n) BT_SEL n
+
+&mt {
+    tapping-term-ms = <180>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
+&lt {
+    tapping-term-ms = <180>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
