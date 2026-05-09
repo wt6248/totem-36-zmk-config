@@ -225,12 +225,5 @@
       bindings = <&kp LG(LS(SPACE))>;
     };
 
-    combo_lang_win {
-      timeout-ms = <COMBO_TERM_SLOW>;
-      require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE>;
-      key-positions = <RH0 RH1>;
-      layers = <WBASE>;
-      bindings = <&kp RALT>;
-    };
   };
 };

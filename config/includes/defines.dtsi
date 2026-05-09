@@ -1,5 +1,5 @@
-#define BASE    0
-#define WBASE   1
+#define WBASE   0
+#define BASE    1
 #define NUM     2
 #define SPE     3
 #define NAV     4
